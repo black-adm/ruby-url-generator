@@ -10,15 +10,16 @@ end
 
 post '/' do
   url = params['url']
+
   CodeGenerator.url_code ||= {}
 
-  if CodeGenerator.url_code.key?(url)
-    code = CodeGenerator.url_code[url]
-  else
-    code = CodeGenerator.generate_unique_code
-    CodeGenerator.url_code[url] = code
-    CodeGenerator.code_url[code] = url
-  end
+    if CodeGenerator.url_code.key?(url)
+      code = CodeGenerator.url_code[url]
+    else
+      code = CodeGenerator.generate_unique_code
+      CodeGenerator.url_code[url] = code
+      CodeGenerator.code_url[code] = url
+    end
 
   if request.accept?('text/html')
     erb :result, locals: { code: code, original_url: url }
