@@ -4,7 +4,12 @@ module.exports = {
     './app/views/**/*',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary-orange': '#FD7E14',
+        'light-orange': '#FFD966'
+      }
+    },
   },
   plugins: [],
 }

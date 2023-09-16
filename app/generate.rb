@@ -1,17 +1,17 @@
 require 'securerandom'
 
 module CodeGenerator
-    url_code = {}
-    code_url = {}
+    @url_code = {}
+    @code_url = {}
 
-    def generate_unique_code 
+    def self.generate_unique_code 
         code_length = 6
         characters = [
             ('a'..'z'),
             ('A'..'Z'),
             ('0'..'9')
         ].map(&:to_a).flatten
-        code = (0...code_length).map { characters[rand(characters.lenght)] }.join
+        code = (0...code_length).map { characters[rand(characters.length)] }.join
         code 
     end
 
