@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'json'
+require 'uri'
 require_relative 'generate' 
 
 set :public_folder, 'public'
@@ -29,6 +30,11 @@ post '/' do
   end
 
   redirect "/result/#{code}"
+
+  if request != accept?('text/html')
+    status 404
+    erb :not_found
+  end
 end
 
 get '/result/:code' do
