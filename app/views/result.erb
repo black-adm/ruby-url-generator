@@ -2,19 +2,43 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/build.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/build.css">
 
-	<title>Gerador de URL - Código gerado</title>
+  <title>Gerador de URL - Código gerado</title>
 </head>
 
 <body>
-	<div class="h-screen md:flex">
-		<h1>Código Gerado:</h1>
-    <p><%= code %></p>
-    <h2>URL Original:</h2>
-    <p><%= original_url %></p>
-	</div>
+  <div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-6 sm:py-12 bg-white">
+    <div class="max-w-xl px-5 text-center">
+      <h2 class="mb-2 text-[42px] font-bold text-black">
+        Prontinho Dev, </br>
+        <strong class="text-primary-orange">código gerado</strong> 🔑
+      </h2>
+
+      <div class="py-4 flex flex-col justify-center items-center">
+        <p class="mb-4 text-lg text-zinc-500">
+          Essa é a nova URL para ao link que você informou. </br>
+          <span class="font-medium text-4xl text-sky-400 cursor-pointer hover:underline focus:underline">
+            <%= code %>
+          </span>
+        </p>
+      </div>
+
+      <div class="py-3">
+        <h4>URL orignal 🔗</h4>
+        <p class="text-gray-400">
+          <%= original_url %>
+        </p>
+      </div>
+
+      <a href="/:code"
+        class="mt-5 inline-block w-80 rounded-3xl bg-primary-orange px-5 py-3 font-medium text-white shadow-md shadow-indigo-500/20 hover:bg-light-orange">
+        Clique para ser redirecionado →
+      </a>
+    </div>
+  </div>
 </body>
+
 </html>

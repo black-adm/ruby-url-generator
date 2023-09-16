@@ -30,6 +30,17 @@ post '/' do
   redirect "/result/#{code}"
 end
 
+get '/result/:code' do
+  code = params[:code]
+
+  if CodeGenerator.code_url.key?(code)
+    original_url = CodeGenerator.code_url[code]
+    erb :result, locals: { code: code, original_url: original_url }
+  else
+    status 404
+    erb :not_found
+  end
+end
 
 get '/:code' do
   code = params[:code]
@@ -42,3 +53,4 @@ get '/:code' do
     erb :not_found
   end
 end
+
