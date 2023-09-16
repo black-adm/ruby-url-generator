@@ -2,6 +2,8 @@ require 'sinatra'
 require 'json'
 require_relative 'generate' 
 
+set :public_folder, 'public'
+
 get '/' do
   erb :index
 end
